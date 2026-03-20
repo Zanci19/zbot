@@ -28,7 +28,6 @@ class $modify(PlayLayer) {
     }
 
     CheckpointObject* createCheckpoint() {
-        zBot* mgr = zBot::get();
         Checkpoint cp;
         
         for (auto pair : memberPairs) {
@@ -51,7 +50,6 @@ class $modify(PlayLayer) {
     void resetLevel() {
         PlayLayer::resetLevel();
 
-        zBot* mgr = zBot::get();
         if (checkpoints.empty()) {
             return;
         }
@@ -68,6 +66,5 @@ class $modify(PlayLayer) {
     void onExit() {
         PlayLayer::onExit();
         checkpoints.clear();
-        zBot* mgr = zBot::get();
     }
 };

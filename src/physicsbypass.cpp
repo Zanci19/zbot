@@ -49,7 +49,7 @@ class $modify(GJBaseGameLayer) {
     }
 
     float getModifiedDelta(float dt) {
-        GJBaseGameLayer::getModifiedDelta(dt);
+        (void)GJBaseGameLayer::getModifiedDelta(dt);
 
         zBot* mgr = zBot::get();
         double newDelta = 1.f / mgr->tps;

@@ -1,0 +1,9 @@
+[submodule "src/zKeyChecker"]
+	path = src/zKeyChecker
+	url = https://github.com/FigmentBoy/zKeyChecker
+[submodule "src/zPracticeMode"]
+	path = src/zPracticeMode
+	url = https://github.com/FigmentBoy/zPracticeMode
+[submodule "src/zClickbot"]
+	path = src/zClickbot
+	url = https://github.com/FigmentBoy/zClickbot

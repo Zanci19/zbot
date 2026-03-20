@@ -6,7 +6,7 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
 project(zBot VERSION 3.0.0 LANGUAGES CXX)
 
-file(GLOB SOURCES
+set(SOURCES
     src/gui.cpp
     src/keybinds.cpp
     src/physicsbypass.cpp
@@ -14,9 +14,6 @@ file(GLOB SOURCES
     src/recordmanager.cpp
     src/speedhackaudio.cpp
     src/clickbetweenframescompat.cpp
-    src/zClickbot/clickbot.cpp
-    src/zKeyChecker/keychecker.cpp
-    # src/zPracticeMode/practicemode.cpp
 )
 
 add_library(${PROJECT_NAME} SHARED ${SOURCES})

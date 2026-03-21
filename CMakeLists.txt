@@ -34,6 +34,12 @@ CPMAddPackage("gh:maxnut/GDReplayFormat#9c32b5529067901418ea6e4dfbd36437dc8712bc
 CPMAddPackage("gh:matcool/gd-imgui-cocos#97643336209b760a3d59d83b770546b1cfef4e7d")
 target_compile_definitions(${PROJECT_NAME} PRIVATE MOD_VERSION="${CMAKE_PROJECT_VERSION}")
 
+if(TARGET fmt)
+    # fmt's base.h calls isalpha() without using the return value; suppress the
+    # resulting -Wunused-result warning that is emitted on GCC/Clang builds.
+    target_compile_options(fmt PRIVATE $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>:-Wno-unused-result>)
+endif()
+
 if (WIN32)
 target_link_libraries(${PROJECT_NAME} imgui-cocos libGDR)
 elseif (APPLE)
